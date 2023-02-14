@@ -1,0 +1,11 @@
+- hosts: oracle_cloud
+  remote_user: ubuntu
+  vars_files:
+  - vars.yaml
+  become: true
+  tasks:
+  - name: Update cache
+    apt:
+      update_cache: yes
+      upgrade: yes
+      cache_valid_time: 86400 #1 day
