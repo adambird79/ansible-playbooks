@@ -1,0 +1,10 @@
+- hosts: oracle_cloud
+  remote_user: ubuntu
+  vars_files:
+  - vars.yaml
+  become: true
+  tasks:
+  - name: Update cache
+    apt:
+      update_cache: yes
+      deb: https://github.com/PowerShell/PowerShell/releases/download/v7.3.2/powershell_7.3.2-1.deb_amd64.deb
