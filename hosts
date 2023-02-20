@@ -1,0 +1,11 @@
+[oracle_cloud]
+#10.0.0.149
+#10.0.0.24
+"TEST_VM1" ansible_host=10.0.0.149
+"TEST_VM2" ansible_host=10.0.0.24
+
+[fortigates]
+"TEST_FortiGate" ansible_host=123.123.123.123 ansible_user=testapi ansible_password=***password_goes_here***
+
+[fortigates:vars]
+ansible_network_os=fortinet.fortios.fortios
