@@ -1,0 +1,8 @@
+- hosts: oracle_cloud
+#- hosts: all
+  vars_files:
+  - vars.yaml
+  gather_facts: no
+  tasks:
+  - name: ping
+    ping:
