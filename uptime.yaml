@@ -1,0 +1,13 @@
+- hosts: oracle_cloud
+  remote_user: ubuntu
+  vars_files:
+  - vars.yaml
+  gather_facts: no
+  become: false
+  tasks:
+    - name: Execute the Uptime command over Command module
+      register: uptimeoutput
+      command: "uptime"
+
+    - debug:
+        var: uptimeoutput.stdout_lines
