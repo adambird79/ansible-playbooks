@@ -1,0 +1,12 @@
+# This redboots the VM's in the oracle_cloud section of the hosts file
+# Could use init 6 instead of this method
+- hosts: oracle_cloud
+  remote_user: ubuntu
+  vars_files:
+  - vars.yaml
+  gather_facts: no
+  become: true
+  tasks:
+    - name: Reboot VMs
+      reboot:
+        reboot_timeout: 300
